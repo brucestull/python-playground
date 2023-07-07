@@ -1,3 +1,5 @@
+print(f"__name__ is '{__name__}' in table.py")
+
 from bottles import PopBottle, BeerBottle
 
 
@@ -44,8 +46,8 @@ def main():
     We are using a `main` method to run our code. This is a common practice in Python. This allows us to import this file without running the code. This is useful if we want to use the classes in this file in another file.
     """
     # We are creating two bottles.
-    pop_1 = PopBottle(200, "cola", "Coca-Cola")
-    beer_1 = BeerBottle(100, "lager", "Budweiser")
+    pop_1 = PopBottle(200, "100%", "Coca-Cola")
+    beer_1 = BeerBottle(100, "5.1%", "Budweiser")
 
     # We are creating a table with the two bottles.
     table = Table([pop_1, beer_1])

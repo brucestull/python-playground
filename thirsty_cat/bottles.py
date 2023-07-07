@@ -1,3 +1,5 @@
+print(f"__name__ is '{__name__}' in bottles.py")
+
 class Bottle:
     """
     Class representing a bottle.
@@ -47,13 +49,13 @@ class PopBottle(Bottle):
         empty [from super class]: Empties the bottle.
     """
 
-    def __init__(self, capacity, flavor, brand):
+    def __init__(self, capacity, caffiene_content, brand):
         super().__init__(capacity)
-        self.flavor = flavor
+        self.caffiene_content = caffiene_content
         self.brand = brand
 
     def __str__(self):
-        return f"{self.brand} {self.flavor} {super().__str__()}"
+        return f"{self.brand} {self.caffiene_content} {super().__str__()}"
 
 
 class BeerBottle(Bottle):
@@ -70,10 +72,10 @@ class BeerBottle(Bottle):
         empty [from super class]: Empties the bottle.
     """
 
-    def __init__(self, capacity, flavor, brand):
+    def __init__(self, capacity, alcohol_content, brand):
         super().__init__(capacity)
-        self.flavor = flavor
+        self.alcohol_content = alcohol_content
         self.brand = brand
 
     def __str__(self):
-        return f"{self.brand} {self.flavor} {super().__str__()}"
+        return f"{self.brand} {self.alcohol_content} {super().__str__()}"
