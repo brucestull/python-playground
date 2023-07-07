@@ -1,4 +1,4 @@
-print(f"__name__ is '{__name__}' in bottles.py")
+print(f"__name__ is '{__name__}' in 'bottles.py'")
 
 class Bottle:
     """

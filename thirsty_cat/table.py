@@ -1,4 +1,4 @@
-print(f"__name__ is '{__name__}' in table.py")
+print(f"__name__ is '{__name__}' in 'table.py'")
 
 from bottles import PopBottle, BeerBottle
 
