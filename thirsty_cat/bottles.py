@@ -6,6 +6,7 @@ class Bottle:
 
     Attributes:
         capacity (int): The maximum volume of the bottle.
+        capacity_unit (str): The unit of measurement for the capacity.
         current_volume (int): The current volume of the bottle.
 
     Methods:
@@ -13,8 +14,19 @@ class Bottle:
         empty: Empties the bottle.
     """
 
-    def __init__(self, capacity):
+    def __init__(self, capacity, capacity_unit="ml"):
+        """
+        The constructor for the Bottle class.
+
+        Default the capacity unit to milliliters (ml).
+
+        Parameters:
+            capacity (int): The maximum volume of the bottle.
+            capacity_unit (str): The unit of measurement for the capacity.
+            current_volume (int): The current volume of the bottle.
+        """
         self.capacity = capacity
+        self.capacity_unit = capacity_unit
         self.current_volume = 0
 
     def fill(self, amount):
@@ -41,7 +53,7 @@ class PopBottle(Bottle):
 
     Attributes:
         capacity (int) [from super class]: The maximum volume of the bottle.
-        flavor (str): The flavor of the pop.
+        caffeine_content (str): The caffeine content of the pop.
         brand (str): The brand of the pop.
 
     Methods:
@@ -49,13 +61,13 @@ class PopBottle(Bottle):
         empty [from super class]: Empties the bottle.
     """
 
-    def __init__(self, capacity, caffiene_content, brand):
+    def __init__(self, capacity, caffeine_content, brand):
         super().__init__(capacity)
-        self.caffiene_content = caffiene_content
+        self.caffeine_content = caffeine_content
         self.brand = brand
 
     def __str__(self):
-        return f"{self.brand} {self.caffiene_content} {super().__str__()}"
+        return f"{self.brand} {self.caffeine_content} {super().__str__()}"
 
 
 class BeerBottle(Bottle):
@@ -64,7 +76,7 @@ class BeerBottle(Bottle):
 
     Attributes:
         capacity (int) [from super class]: The maximum volume of the bottle.
-        flavor (str): The flavor of the beer.
+        alcohol_content (str): The alcohol content of the beer.
         brand (str): The brand of the beer.
 
     Methods:
