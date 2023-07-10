@@ -78,7 +78,9 @@ class PopBottle(Bottle):
 
     def drink(self, amount):
         """
-        Method for drinking liquid from the bottle.
+        Method for drinking liquid from the PopBottle.
+
+        This method is overridden from the Bottle class. This is an example of polymorphism. Polymorphism is the ability to use the same interface for different data types. In this case, we are using the same interface (the drink method) for different data types (PopBottle and BeerBottle).
         """
         if self.current_volume - amount < 0:
             raise ValueError("Not enough liquid!")
@@ -110,12 +112,14 @@ class BeerBottle(Bottle):
 
     def drink(self, amount):
         """
-        Method for drinking liquid from the bottle.
+        Method for drinking liquid from the BeerBottle.
+
+        This method is being overridden from the Bottle class. This is an example of polymorphism. Polymorphism is the ability to use the same interface for different data types. In this case, we are using the same interface (the drink method) for different data types (PopBottle and BeerBottle).
         """
         if self.current_volume - amount < 0:
             raise ValueError("Not enough liquid!")
         self.current_volume -= amount
-        print("Sipping the ", self.brand, " beer!")
+        print("Choking down the ", self.brand, " beer!")
 
     def __str__(self):
         return f"{self.brand} {self.alcohol_content} {super().__str__()}"
