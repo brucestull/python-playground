@@ -46,6 +46,10 @@ class Bottle:
     def drink(self, amount):
         """
         Method for drinking liquid from the bottle.
+
+        This method is not implemented in the Bottle class. This method will be implemented in the PopBottle and BeerBottle classes.
+
+        This is an example of a method that is not implemented in the parent class. This method will be implemented in the child classes. This is an example of polymorphism. Polymorphism is the ability to use the same interface for different data types. In this case, we are using the same interface (the drink method) for different data types (PopBottle and BeerBottle).
         """
         pass
 
