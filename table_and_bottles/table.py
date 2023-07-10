@@ -46,7 +46,7 @@ def main():
     We are using a `main` method to run our code. This is a common practice in Python. This allows us to import this file without running the code. This is useful if we want to use the classes in this file in another file.
     """
     # We are creating two bottles.
-    pop_1 = PopBottle(200, "100%", "Coca-Cola")
+    pop_1 = PopBottle(200, "100%", "Blenheim")
     beer_1 = BeerBottle(100, "5.1%", "Budweiser")
 
     # We are creating a table with the two bottles.
@@ -60,6 +60,9 @@ def main():
 
     pop_1.drink(50)
     beer_1.drink(25)
+    print(table)
+
+    table.empty()
     print(table)
 
 # We are checking if the file is being run directly. If it is, we run the `main` method.
