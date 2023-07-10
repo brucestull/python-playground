@@ -54,7 +54,7 @@ class Bottle:
         pass
 
     def __str__(self):
-        return f"{self.current_volume}/{self.capacity}"
+        return f"[{self.current_volume}/{self.capacity} {self.liquid_unit}]"
 
 
 class PopBottle(Bottle):
