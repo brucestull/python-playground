@@ -6,7 +6,7 @@ class Bottle:
 
     Attributes:
         capacity (int): The maximum volume of the bottle.
-        capacity_unit (str): The unit of measurement for the capacity.
+        liquid_unit (str): The unit of measurement for the capacity and volume.
         current_volume (int): The current volume of the bottle.
 
     Methods:
@@ -14,7 +14,7 @@ class Bottle:
         empty: Empties the bottle.
     """
 
-    def __init__(self, capacity, capacity_unit="ml"):
+    def __init__(self, capacity, liquid_unit="ml"):
         """
         The constructor for the Bottle class.
 
@@ -22,11 +22,11 @@ class Bottle:
 
         Parameters:
             capacity (int): The maximum volume of the bottle.
-            capacity_unit (str): The unit of measurement for the capacity.
-            current_volume (int): The current volume of the bottle.
+            liquid_unit (str): The unit of measurement for the capacity and volume.
+            current_volume (int): The current volume of liquid the bottle.
         """
         self.capacity = capacity
-        self.capacity_unit = capacity_unit
+        self.liquid_unit = liquid_unit
         self.current_volume = 0
 
     def fill(self, amount):
@@ -42,6 +42,12 @@ class Bottle:
         Method for emptying the bottle.
         """
         self.current_volume = 0
+
+    def drink(self, amount):
+        """
+        Method for drinking liquid from the bottle.
+        """
+        pass
 
     def __str__(self):
         return f"{self.current_volume}/{self.capacity}"
@@ -66,6 +72,15 @@ class PopBottle(Bottle):
         self.caffeine_content = caffeine_content
         self.brand = brand
 
+    def drink(self, amount):
+        """
+        Method for drinking liquid from the bottle.
+        """
+        if self.current_volume - amount < 0:
+            raise ValueError("Not enough liquid!")
+        self.current_volume -= amount
+        print("Chugging the ", self.brand, " pop!")
+
     def __str__(self):
         return f"{self.brand} {self.caffeine_content} {super().__str__()}"
 
@@ -88,6 +103,15 @@ class BeerBottle(Bottle):
         super().__init__(capacity)
         self.alcohol_content = alcohol_content
         self.brand = brand
+
+    def drink(self, amount):
+        """
+        Method for drinking liquid from the bottle.
+        """
+        if self.current_volume - amount < 0:
+            raise ValueError("Not enough liquid!")
+        self.current_volume -= amount
+        print("Sipping the ", self.brand, " beer!")
 
     def __str__(self):
         return f"{self.brand} {self.alcohol_content} {super().__str__()}"

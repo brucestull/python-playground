@@ -58,8 +58,11 @@ def main():
     beer_1.fill(50)
     print(table)
 
-# We are checking if the file is being run directly. If it is, we run the `main` method.
+    pop_1.drink(50)
+    beer_1.drink(25)
+    print(table)
 
+# We are checking if the file is being run directly. If it is, we run the `main` method.
 # ¿`__name__` will be equal to `"__main__"` if the file is being run directly. If the file is being imported, `__name__` will be equal to the name of the file?
 if __name__ == "__main__":
     main()
