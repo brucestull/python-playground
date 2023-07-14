@@ -38,7 +38,7 @@ obj.value = 23
 print(obj.value)  # Output: 23
 ```
 
-## Thirsty Cat
+## Table and Bottles
 
 ### Commands
 
